@@ -1,98 +1,143 @@
-html, body {
-    height: 100%;
-    width: 100%;
-    color: #333;
-    font-family: Lato, sans-serif;
-    background-color: #bcb6bd;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(120deg, #5da4e2, #ba1ddc);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
 }
 header{
-    text-align: center;
+    font-size: 1.5rem;
 }
-section{
+header, form{
+    min-height: 20vh;
     display: flex;
-    align-self: center;
-    justify-items: center;
-    /*border: 2px solid green;*/
-    margin-bottom: 1rem;
     justify-content: center;
+    align-items: center;
 }
-ul{
-    width: 75%;
-    /*border: 2px solid blue;*/
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    flex-wrap: wrap;
-    border-radius: 2rem;
+form{
+    border-radius: 0.5rem;
+}
+form input, form button{
+    padding: 0.75rem;
+    font-size: 1.5rem;
+    border: none;
+    background: white;
+
+}
+form input{
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+form button{
+    color: #ff6f47;
+    background: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+}
+select{
+    appearance: none;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #ff6f47;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
 
-li{
-    min-width: 40rem;
-    border: whitesmoke;
-    padding: 20px;
-    font-size: x-large;
-    background-color: #f8f8f8;
-    border-radius: 2rem;
-    margin: 0.5rem 5rem 0.5rem 0.5rem;
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    font-size: x-small;
+}
+.select:after{
+    content: "\25BC";
+    position: absolute;
+    background: #ff6f47;
+    border-radius: 0 0.5rem 0.5rem 0;
+    top:0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+.select:hover:after{
+    background: white;
+    color: #ff6f47;
+}
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-list{
+    min-width: 30%;
+    list-style: none;
+}
+.todo{
+    margin: 0.5rem;
+    background: #ffffff;
+    color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10px;
-
+    transition: all 0.5s ease;
+    border-radius: 0.5rem;
 }
-input:checked{
-    background-color: #854c86;
+.todo li{
+    flex-grow: 1;
 }
-button:hover {
+.trash-btn, .complete-btn{
+    background: #ff6f47;
+    color: white;
+    border: none;
+    padding: 1rem;
     cursor: pointer;
+
 }
-input{
-    border-radius: 1rem;
-    font-size: large;
+.trash-btn{
+    border-radius: 0 0.5rem 0.5rem 0;
 }
-input:focus{
-    outline: none;
+.trash-btn:hover{
+    background: white;
+    color: #ff6f47;
 }
-span{
-    /*border: 2px solid blue;*/
+.complete-btn{
+    background: #6cc42c;
 }
-div{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.complete-btn:hover{
+    color: #6cc42c;
+    background: #e8ffdf;
 }
-button{
-    /*border: 2px solid blue;*/
-    border: none;
-    border-radius: 50%;
-    background-color: #b14242;
-    /*border: none;*/
-    color: white;
-    padding: 10px 12px;
-    text-align: center;
-    font-size: 15px;
+.todo-item{
+    padding: 0 0.5rem;
 }
-ul {
-    list-style-type: none; /* get rid of bullet points on side of list items */
+.fa-trash, .fa-check{
+    pointer-events: none;
 }
-input[type=checkbox]:checked + span.task{
+.completed{
     text-decoration: line-through;
+    opacity: 0.5;
 }
-#add-task-button{
-    background-color: #854c86;
-    /*border: none;*/
-    border-radius: 2rem;
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+form button:hover{
     color: white;
-    padding: 10px 15px;
-    text-align: center;
-    font-size: 15px;
-    margin-left: 0rem;
+    background: #ff6f47;
 }
-
-#input-task{
-    border: none;
-    min-width: 20rem;
-    color: #444242;
-
-    border: solid 2px #854c86;
+form button:active{
+    color: white;
+    background: #98d871;
+}
+form input:focus{
+    outline: none;
 }
